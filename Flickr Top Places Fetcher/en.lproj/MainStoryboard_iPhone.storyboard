@@ -138,13 +138,7 @@
                             <outlet property="delegate" destination="lKa-dj-MK7" id="vsu-vU-OCy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Top 50 Photos" id="6QG-3m-Y1N">
-                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="Clo-gi-wHS">
-                            <connections>
-                                <action selector="refresh:" destination="lKa-dj-MK7" id="swk-VP-Vo9"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Top 50 Photos" id="6QG-3m-Y1N"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1582" y="-273"/>
@@ -217,12 +211,12 @@
             </objects>
             <point key="canvasLocation" x="13" y="198"/>
         </scene>
-        <!--Navigation Controller - Top Places-->
+        <!--Navigation Controller-->
         <scene sceneID="HGc-Xg-2zo">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mk9-kj-NP5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="Q2Q-Sr-lva" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Top Places" id="ASh-fr-dBK"/>
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="ASh-fr-dBK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oh0-5d-KlY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -236,12 +230,12 @@
             </objects>
             <point key="canvasLocation" x="651" y="-926"/>
         </scene>
-        <!--Navigation Controller - Recents-->
+        <!--Navigation Controller-->
         <scene sceneID="dSB-1C-kGb">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XOp-x3-OW6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="Gzq-IZ-0hT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Recents" id="4eH-jY-Uqe"/>
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="4eH-jY-Uqe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Oeh-rl-VMe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -261,7 +255,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FlickrImageViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="photoTitle" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
             </relationships>
         </class>
         <class className="FlickrRecentTableViewController" superclassName="UITableViewController">
@@ -269,9 +265,6 @@
         </class>
         <class className="FlickrTopFiftyTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FlickrTopFiftyTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refresh:"/>
-            </relationships>
         </class>
         <class className="FlickrTopPlacesTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FlickrTopPlacesTableViewController.h"/>
