@@ -50,9 +50,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Top Places" id="av4-Cp-D9r">
-                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="gXx-if-SWv">
+                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="gXx-if-SWv">
                             <connections>
                                 <action selector="refresh:" destination="6Qz-Kg-1gK" id="Xpy-IC-yfy"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Show Map" id="DNY-3P-QDG">
+                            <connections>
+                                <segue destination="gaP-Nc-RDC" kind="push" identifier="show top places map" id="eEj-oA-AeC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -60,13 +65,39 @@
             </objects>
             <point key="canvasLocation" x="1463" y="-920"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="uzW-hh-IVf">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4tP-jY-Zt7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="gaP-Nc-RDC" customClass="MapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O3k-nJ-tMM">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="h8q-SC-2iZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BoX-NO-xbY"/>
+                    <connections>
+                        <outlet property="mapview" destination="h8q-SC-2iZ" id="3lt-Db-D0W"/>
+                        <segue destination="AGL-fS-kuo" kind="push" identifier="Show Selected Image" id="Fjj-lv-F5E"/>
+                        <segue destination="lKa-dj-MK7" kind="push" identifier="Show top fifty photos" id="sg5-8W-CPp"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2310" y="-390"/>
+        </scene>
         <!--Flickr Image View Controller-->
         <scene sceneID="4qO-Xs-B58">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hz7-Jo-uy3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="AGL-fS-kuo" customClass="FlickrImageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tnj-eu-bNK">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.20000000000000001" maximumZoomScale="5" id="0iN-Nn-aT9">
@@ -92,7 +123,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2052" y="275"/>
+            <point key="canvasLocation" x="2014" y="473"/>
         </scene>
         <!--Flickr Top Fifty Table View Controller - Top 50 Photos-->
         <scene sceneID="HHP-6d-wqL">
@@ -138,7 +169,16 @@
                             <outlet property="delegate" destination="lKa-dj-MK7" id="vsu-vU-OCy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Top 50 Photos" id="6QG-3m-Y1N"/>
+                    <navigationItem key="navigationItem" title="Top 50 Photos" id="6QG-3m-Y1N">
+                        <barButtonItem key="rightBarButtonItem" title="Show Map" id="AhS-i2-sYQ">
+                            <connections>
+                                <segue destination="gaP-Nc-RDC" kind="push" identifier="show top photos map" id="UJB-Qd-N6g"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="showMap" destination="AhS-i2-sYQ" id="Caz-HE-JpV"/>
+                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1582" y="-273"/>
@@ -187,7 +227,13 @@
                             <outlet property="delegate" destination="dHD-aP-77u" id="YVo-Qg-sa8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recents" id="iwM-nb-KsV"/>
+                    <navigationItem key="navigationItem" title="Recents" id="iwM-nb-KsV">
+                        <barButtonItem key="rightBarButtonItem" title="Show Map" id="znV-y0-Akd">
+                            <connections>
+                                <segue destination="gaP-Nc-RDC" kind="push" identifier="show recent photos map" id="bUA-AG-qoC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1243" y="787"/>
@@ -265,11 +311,20 @@
         </class>
         <class className="FlickrTopFiftyTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FlickrTopFiftyTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="showMap" candidateClass="UIBarButtonItem"/>
+            </relationships>
         </class>
         <class className="FlickrTopPlacesTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FlickrTopPlacesTableViewController.h"/>
             <relationships>
                 <relationship kind="action" name="refresh:"/>
+            </relationships>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapview" candidateClass="MKMapView"/>
             </relationships>
         </class>
     </classes>
@@ -279,6 +334,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="eJM-3w-1kT"/>
+        <segue reference="sg5-8W-CPp"/>
+        <segue reference="UJB-Qd-N6g"/>
+        <segue reference="Fjj-lv-F5E"/>
     </inferredMetricsTieBreakers>
 </document>
