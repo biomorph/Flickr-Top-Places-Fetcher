@@ -7,27 +7,36 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Flickr Top Places Fetcher/FlickrPhotoAnnotation.m"
-         timestampString = "365398415.610998"
+         filePath = "Flickr Top Places Fetcher/MapViewController.m"
+         timestampString = "365553188.590536"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "35"
-         endingLineNumber = "35"
-         landmarkName = "-title"
+         startingLineNumber = "139"
+         endingLineNumber = "139"
+         landmarkName = "-mapView:annotationView:calloutAccessoryControlTapped:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Flickr Top Places Fetcher/FlickrTopPlacesTableViewController.m"
-         timestampString = "365391337.897178"
+         filePath = "Flickr Top Places Fetcher/MapViewController.m"
+         timestampString = "365553188.590536"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "131"
-         endingLineNumber = "131"
-         landmarkName = "-mapAnnotations"
+         startingLineNumber = "91"
+         endingLineNumber = "91"
+         landmarkName = "-setAnnotations:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
+   <ExceptionBreakpoints>
+      <ExceptionBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         scope = "0"
+         stopOnStyle = "0">
+      </ExceptionBreakpoint>
+   </ExceptionBreakpoints>
 </Bucket>
